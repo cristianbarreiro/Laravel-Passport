@@ -27,6 +27,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->registerPolicies();
+        // Passport::routes(); a partir de Passport 11 o superior debo registrar en routes/api.php
     }
 }
