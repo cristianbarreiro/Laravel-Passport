@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,4 +22,6 @@ Route::get('/client', function () {
     return view('client');
 })->middleware(['auth', 'verified'])->name('client');
 
-require __DIR__.'/auth.php';
+Route::post('/oauth/clients', [ClientController::class, 'store'])->middleware('auth');
+
+require __DIR__ . '/auth.php';

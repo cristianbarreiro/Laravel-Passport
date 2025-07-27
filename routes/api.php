@@ -9,3 +9,5 @@ use Illuminate\Support\Facades\Route;
 Route::post('/oauth/token', [AccessTokenController::class, 'issueToken']);
 Route::get('/oauth/authorize', [AuthorizationController::class, 'authorize']);
 Route::post('/oauth/token/refresh', [TransientTokenController::class, 'refresh']);
+
+
